@@ -2,9 +2,9 @@
  
 // 공 선택 이벤트 핸들러
 function handleMouseDown(event){
-  event.preventDefault();;
+  event.preventDefault();; //어떤 이벤트에 대해 실행을 취소하고 싶은 경우
   
-  const balls = document.querySelectorAll(".ball");
+  const balls = document.querySelectorAll(".ball"); //엘리먼트의 NodeList 를 얻을 수 있음
   const el = event.target;
   const classList = el.classList;
   
