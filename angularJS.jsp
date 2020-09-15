@@ -1,16 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-<c:if test="${not empty loginMsg}">
-	<script>
-	alert('${loginMsg}');
-	</script>
-</c:if>
-<div id="toastAdd">장바구니에 추가되었습니다.</div>
 <script>
 //angularjs를 이용해서 storageSession에 메뉴정보를 저장한다.
 var myApp = angular.module("myApp",[]);
@@ -426,5 +419,3 @@ $(function(){
 	 <div class="detail_contents"> </div>
 	 <div class="price_wrap"><div class="detail_price"> </div> 원</div>
 </div>
-<%-- <jsp:include page="/WEB-INF/views/store/storePopup.jsp"/> --%>
-<%@include file="/WEB-INF/views/store/storePopup.jsp" %>
