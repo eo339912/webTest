@@ -76,7 +76,30 @@ uploadFiles[idx].upload = 'disable'; //삭제된 항목은 업로드하지 않�
 $target.parent().remove(); //프리뷰 삭제
 });
 </script>
-  /*출처: https://sub0709.tistory.com/46 [쓸데없는 코딩하기]*/
+  //출처: https://sub0709.tistory.com/46 [쓸데없는 코딩하기]
+  
+<form id="form" runat="server">
+   <input type='file' id="imgInput"/>
+   <img id="image_section" src="#" alt="your image"/>
+</form>
+<script>
+ function readURL(input) {
+ if (input.files && input.files[0]) {
+  var reader = new FileReader();
+  
+  reader.onload = function (e) {
+   $('#image_section').attr('src', e.target.result);  
+  }
+  
+  reader.readAsDataURL(input.files[0]);
+  }
+}
+ 
+// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+$("#imgInput").change(function(){
+   readURL(this);
+});
+ <script>
 </body>
 </html>
 
