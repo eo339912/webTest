@@ -4,10 +4,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
 <script type='text/javascript'>
 function MyCtrl($scope) {<!--from   w  ww . ja va  2 s  .c om-->
-    $scope.foo = "I'm foo!";
+    $scope.foo;
     $scope.lines = [];
 
     $scope.addLine = function () {
+        $scope.foo = $(window.event.target).html();
         $scope.lines.push($scope.lines.length);
     };
 }
@@ -15,7 +16,9 @@ function MyCtrl($scope) {<!--from   w  ww . ja va  2 s  .c om-->
 </head>
 <body>
   <div ng-app ng-controller="MyCtrl">
-    <button ng-click="addLine()">Add a line</button>
+    <button ng-click="addLine()">Add a line1</button>
+    <button ng-click="addLine()">Add a line2</button>
+    <button ng-click="addLine()">Add a line3</button>
     <div ng-repeat="line in lines">
         I'm a new line. {{foo}} {{line}}
     </div>
